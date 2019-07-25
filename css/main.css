@@ -448,11 +448,11 @@ body {
 .header-inner {
   margin: 0 auto;
   padding: 100px 0 70px;
-  width: 1000px;
+  width: 900px;
 }
 @media (min-width: 1200px) {
   .container .header-inner {
-    width: 1000px;
+    width: 900px;
   }
 }
 @media (min-width: 1600px) {
@@ -462,11 +462,11 @@ body {
 }
 .main-inner {
   margin: 0 auto;
-  width: 1000px;
+  width: 900px;
 }
 @media (min-width: 1200px) {
   .container .main-inner {
-    width: 1000px;
+    width: 900px;
   }
 }
 @media (min-width: 1600px) {
@@ -480,11 +480,11 @@ body {
 .footer-inner {
   box-sizing: border-box;
   margin: 0px auto;
-  width: 1000px;
+  width: 900px;
 }
 @media (min-width: 1200px) {
   .container .footer-inner {
-    width: 1000px;
+    width: 900px;
   }
 }
 @media (min-width: 1600px) {
@@ -1705,7 +1705,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #dd2265;
+  background: #91d5ff;
 }
 .feed-link,
 .chat {
@@ -2612,7 +2612,7 @@ hr {
 }
 .post-button {
   margin-top: 20px;
-  text-align: left;
+  text-align: right;
 }
 .post-button a {
   padding: 0;
