@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[My second test blog]]></title>
-    <url>%2F2019%2F07%2F25%2Fsecond%20test%2F</url>
-    <content type="text"><![CDATA[Hi, I am Jinchuan. This is my second blog for testing. 11.11System.out.printlin("My second blog").]]></content>
+    <title><![CDATA[Java笔试题常用输入方法]]></title>
+    <url>%2F2019%2F07%2F30%2Fscanner_input%2F</url>
+    <content type="text"><![CDATA[从三月份找实习开始，我才算是真正意识到自己有多菜。经历了数不清多少次的笔试，算法方面菜鸡也就算了，没想到几乎每次考试都会在输入方面卡壳半个小时左右。这次7.28号拼多多“学霸批”的笔试，也是在输入方面浪费了大量时间。为此，在这里总结一下笔试可能会用到的输入方法，吃一堑长一智。本文持续更新。 类型一：多行输入，每行为一个数组，数字之间用空格隔开 1234567891011121314151617Scanner in = new Scanner(System.in);String str1 = in.nextLine().toString();//读取第一行String[] a = str1.split(&quot; &quot;);//按空格分开为字符串数组int[] arrA = new int[a.length];//新建同大小的整型数组for (int i = 0; i &lt; arrA.length; i++) &#123; arrA[i] = Integer.parseInt(a[i]);//字符串解析为十进制整数&#125;String str2 = in.nextLine().toString();//读取第二行，后面几行同理String[] b = str2.split(&quot; &quot;);int[] arrB = new int[b.length];for (int i = 0; i &lt; arrB.length; i++) &#123; arrB[i] = Integer.parseInt(b[i]);&#125;System.out.println(Arrays.toString(arrA));//显示数组System.out.println(Arrays.toString(arrB)); 类型二：第一行一个整数，第二行一个数组此类型的输入不区分各行，只判定第一个整数为数组大小，之后的整数为数组数据即可。也就是只按整型输入读取。 1234567891011121314151617 /** * 输入一个整数(数组大小)，一个数组(空格或回车隔开) * 2 * 1 3 * @author YJC * */Scanner in = new Scanner(System.in);while(in.hasNext()) &#123; int m = in.nextInt();//读取第一个整数，即数组大小 int[] numbers = new int[m];//新建数组 for(int i=0;i&lt;m;i++) &#123; numbers[i] = in.nextInt();//按整型输入读取 &#125; System.out.println(Arrays.toString(numbers));&#125; 类型三：输入多行整数用逗号隔开 输入 120,3,55 代码如下 12345Scanner in = new Scanner(System.in);String[] line = in.nextLine().split(&quot;,&quot;);int a = Integer.parseInt(line[0]);int b = Integer.parseInt(line[1]);int c = Integer.parseInt(line[2]);]]></content>
+      <categories>
+        <category>笔试</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>输入</tag>
+        <tag>笔试</tag>
+      </tags>
   </entry>
   <entry>
-    <title><![CDATA[My first test blog]]></title>
-    <url>%2F2019%2F07%2F24%2Ffirst%20test%2F</url>
-    <content type="text"><![CDATA[a杨]]></content>
+    <title><![CDATA[Java实现单链表，实现链表的插入和删除]]></title>
+    <url>%2F2019%2F07%2F30%2FlinkedList%2F</url>
+    <content type="text"><![CDATA[创建自定义的类和构造方法来实现简单的单链表。将结点结构定义为私有内部类，在外部类中对链表结构进行初始化，包括头结点和初始大小。 单链表操作原理不难，难点在于对链表进行插入和删除操作时，对于指针交换和分配的逻辑。 插入：找到要插入的位置 i 后，用新结点的后继指针替换 i 的后继指针，再将 i 的后继指针指向该新结点。 删除：将要删除位置的后继指针指向下下个元素。 整表创建：注意头插法和尾插法的逻辑，详见代码注释 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990package SqList;/** * 单链表 * @author YJC * */public class SingleLinkedList &#123; //定义链表 private int size;//链表节点的个数 private Node head;//头节点 public SingleLinkedList() &#123; size = 0; head = null; &#125; //链表的结点类 private class Node&#123; private Object data;//每个节点的数据 private Node next;//结点指向下一个节点的指针 public Node(Object data) &#123; this.data = data; &#125; &#125; //查找链表中第i个元素,返回给e public Node find(int i,Object e) &#123; Node current = head; int temp = 1; while(temp&lt;i) &#123; current = current.next; temp++; &#125; e = current; return (Node) e; &#125; //在第i个位置前插入新的元素e public Object insert(int i,Object e) &#123; Node newNode = new Node(e);//新建一个节点 Node current = head; int temp = 1; while(temp&lt;i) &#123; current = current.next; temp++; &#125; newNode.next = current.next; current.next = newNode; return newNode; &#125; //删除第i个结点 public void delete(int i) &#123; int temp = 1; Node current = head; while(temp&lt;i &amp;&amp; current!=null) &#123; current = current.next; temp++; &#125; current.next = current.next.next; &#125; //单链表的整表创建,头插法 加入n个元素到单链表 public void createAtHead(int n) &#123; Node head = null;//头结点指向null，即建立一个带头结点的单链表 for(int i=0;i&lt;n;i++) &#123; Node node = new Node(Math.random()*100+1);//生成1-100的数字 node.next = head; head = node; &#125; &#125; public void createAtTail(int n) &#123; for (int i = 0; i &lt; n; i++) &#123; Node node = new Node(Math.random() * 100 + 1);// 生成1-100的数字 Node tempNode = head; while (null != tempNode.next) &#123; tempNode = tempNode.next;//寻找尾结点 &#125; //此时tempNode是尾结点 node.next = tempNode.next;//null，把node定义为尾结点，后继指针为null tempNode.next = node;//当前尾结点的后继指针指向node &#125; &#125;&#125;]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+        <tag>链表</tag>
+        <tag>Java</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Hello World]]></title>
