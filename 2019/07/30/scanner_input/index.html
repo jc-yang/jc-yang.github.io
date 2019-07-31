@@ -78,7 +78,7 @@
     scheme: 'Mist',
     version: '7.2.0',
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
     copycode: {"enable":false,"show_result":false,"style":null},
     fancybox: false,
     mediumzoom: false,
@@ -101,18 +101,18 @@
   };
 </script>
 
-  <meta name="description" content="从三月份找实习开始，我才算是真正意识到自己有多菜。经历了数不清多少次的笔试，算法方面菜鸡也就算了，没想到几乎每次考试都会在输入方面卡壳半个小时左右。这次7.28号拼多多“学霸批”的笔试，也是在输入方面浪费了大量时间。为此，在这里总结一下笔试可能会用到的输入方法，吃一堑长一智。本文持续更新。 类型一：多行输入，每行为一个数组，数字之间用空格隔开  123456789101112131415161">
+  <meta name="description" content="从三月份找实习开始，我才算是真正意识到自己有多菜。经历了数不清多少次的笔试，算法方面菜鸡也就算了，没想到几乎每次考试都会在输入方面卡壳半个小时左右。这次7.28号拼多多“学霸批”的笔试，也是在输入方面浪费了大量时间。为此，在这里总结一下笔试可能会用到的输入方法，吃一堑长一智。本文持续更新。 类型一：多行输入，每行为一个数组，数字之间用空格隔开  1234567891011121314151617S">
 <meta name="keywords" content="Java,输入,笔试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java笔试题常用输入方法">
 <meta property="og:url" content="http://yoursite.com/2019/07/30/scanner_input/index.html">
 <meta property="og:site_name" content="Jinchuan&#39;s Page">
-<meta property="og:description" content="从三月份找实习开始，我才算是真正意识到自己有多菜。经历了数不清多少次的笔试，算法方面菜鸡也就算了，没想到几乎每次考试都会在输入方面卡壳半个小时左右。这次7.28号拼多多“学霸批”的笔试，也是在输入方面浪费了大量时间。为此，在这里总结一下笔试可能会用到的输入方法，吃一堑长一智。本文持续更新。 类型一：多行输入，每行为一个数组，数字之间用空格隔开  123456789101112131415161">
+<meta property="og:description" content="从三月份找实习开始，我才算是真正意识到自己有多菜。经历了数不清多少次的笔试，算法方面菜鸡也就算了，没想到几乎每次考试都会在输入方面卡壳半个小时左右。这次7.28号拼多多“学霸批”的笔试，也是在输入方面浪费了大量时间。为此，在这里总结一下笔试可能会用到的输入方法，吃一堑长一智。本文持续更新。 类型一：多行输入，每行为一个数组，数字之间用空格隔开  1234567891011121314151617S">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-30T12:40:24.541Z">
+<meta property="og:updated_time" content="2019-07-30T12:47:59.008Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java笔试题常用输入方法">
-<meta name="twitter:description" content="从三月份找实习开始，我才算是真正意识到自己有多菜。经历了数不清多少次的笔试，算法方面菜鸡也就算了，没想到几乎每次考试都会在输入方面卡壳半个小时左右。这次7.28号拼多多“学霸批”的笔试，也是在输入方面浪费了大量时间。为此，在这里总结一下笔试可能会用到的输入方法，吃一堑长一智。本文持续更新。 类型一：多行输入，每行为一个数组，数字之间用空格隔开  123456789101112131415161">
+<meta name="twitter:description" content="从三月份找实习开始，我才算是真正意识到自己有多菜。经历了数不清多少次的笔试，算法方面菜鸡也就算了，没想到几乎每次考试都会在输入方面卡壳半个小时左右。这次7.28号拼多多“学霸批”的笔试，也是在输入方面浪费了大量时间。为此，在这里总结一下笔试可能会用到的输入方法，吃一堑长一智。本文持续更新。 类型一：多行输入，每行为一个数组，数字之间用空格隔开  1234567891011121314151617S">
 
 
 
@@ -173,6 +173,12 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/src/fireworks.js"></script>
+
 
   
   
@@ -410,7 +416,7 @@
                 
               
 
-              <time title="创建时间：2019-07-30 19:26:21 / 修改时间：20:40:24" itemprop="dateCreated datePublished" datetime="2019-07-30T19:26:21+08:00">2019-07-30</time>
+              <time title="创建时间：2019-07-30 19:26:21 / 修改时间：20:47:59" itemprop="dateCreated datePublished" datetime="2019-07-30T19:26:21+08:00">2019-07-30</time>
             </span>
           
 
@@ -489,7 +495,7 @@
       
 
       
-        <p>  从三月份找实习开始，我才算是真正意识到自己有多菜。经历了数不清多少次的笔试，算法方面菜鸡也就算了，没想到几乎每次考试都会在输入方面卡壳半个小时左右。这次7.28号拼多多“学霸批”的笔试，也是在输入方面浪费了大量时间。为此，在这里总结一下笔试可能会用到的输入方法，吃一堑长一智。本文持续更新。</p>
+        <p>从三月份找实习开始，我才算是真正意识到自己有多菜。经历了数不清多少次的笔试，算法方面菜鸡也就算了，没想到几乎每次考试都会在输入方面卡壳半个小时左右。这次7.28号拼多多“学霸批”的笔试，也是在输入方面浪费了大量时间。为此，在这里总结一下笔试可能会用到的输入方法，吃一堑长一智。本文持续更新。</p>
 <h2 id="类型一：多行输入，每行为一个数组，数字之间用空格隔开"><a href="#类型一：多行输入，每行为一个数组，数字之间用空格隔开" class="headerlink" title="类型一：多行输入，每行为一个数组，数字之间用空格隔开"></a>类型一：多行输入，每行为一个数组，数字之间用空格隔开</h2>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Scanner in = new Scanner(System.in);</span><br><span class="line">String str1 = in.nextLine().toString();//读取第一行</span><br><span class="line">String[] a = str1.split(&quot; &quot;);//按空格分开为字符串数组</span><br><span class="line">int[] arrA = new int[a.length];//新建同大小的整型数组</span><br><span class="line">for (int i = 0; i &lt; arrA.length; i++) &#123;</span><br><span class="line">  arrA[i] = Integer.parseInt(a[i]);//字符串解析为十进制整数</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">String str2 = in.nextLine().toString();//读取第二行，后面几行同理</span><br><span class="line">String[] b = str2.split(&quot; &quot;);</span><br><span class="line">int[] arrB = new int[b.length];</span><br><span class="line">for (int i = 0; i &lt; arrB.length; i++) &#123;</span><br><span class="line">  arrB[i] = Integer.parseInt(b[i]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">System.out.println(Arrays.toString(arrA));//显示数组</span><br><span class="line">System.out.println(Arrays.toString(arrB));</span><br></pre></td></tr></table></figure>
 
 <h2 id="类型二：第一行一个整数，第二行一个数组"><a href="#类型二：第一行一个整数，第二行一个数组" class="headerlink" title="类型二：第一行一个整数，第二行一个数组"></a>类型二：第一行一个整数，第二行一个数组</h2><p>此类型的输入不区分各行，只判定第一个整数为数组大小，之后的整数为数组数据即可。也就是只按整型输入读取。<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"> /**</span><br><span class="line"> * 输入一个整数(数组大小)，一个数组(空格或回车隔开)</span><br><span class="line"> * 2</span><br><span class="line"> * 1 3</span><br><span class="line"> * @author YJC</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">Scanner in = new Scanner(System.in);</span><br><span class="line">while(in.hasNext()) &#123;</span><br><span class="line"> int m = in.nextInt();//读取第一个整数，即数组大小</span><br><span class="line"> int[] numbers = new int[m];//新建数组</span><br><span class="line"> for(int i=0;i&lt;m;i++) &#123;</span><br><span class="line">   numbers[i] = in.nextInt();//按整型输入读取</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> System.out.println(Arrays.toString(numbers));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -788,6 +794,8 @@
     
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
         
       </div>
     
@@ -1257,10 +1265,6 @@ window.addEventListener("message", function(e) {
 
   
 
-
-   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas> 
-   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
-   <script type="text/javascript" src="/js/src/fireworks.js"></script>
 
 
 </body>
