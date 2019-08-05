@@ -109,7 +109,7 @@
 <meta property="og:site_name" content="Jinchuan&#39;s Page">
 <meta property="og:description" content="TODO 不连接(即用,在from中分隔两表)和内连接的区别，是不是都可以产生笛卡尔积？ 连接时用的on和判断时用的where如何正确使用，同时使用时如何正确使用？详见183方法一 使用group by时，只要是select中非聚集函数的列，都要在 group by当中  181. Employees Earning More Than Their Managers来源：https://leetc">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-05T13:11:08.088Z">
+<meta property="og:updated_time" content="2019-08-05T13:16:11.104Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode Database做题笔记">
 <meta name="twitter:description" content="TODO 不连接(即用,在from中分隔两表)和内连接的区别，是不是都可以产生笛卡尔积？ 连接时用的on和判断时用的where如何正确使用，同时使用时如何正确使用？详见183方法一 使用group by时，只要是select中非聚集函数的列，都要在 group by当中  181. Employees Earning More Than Their Managers来源：https://leetc">
@@ -416,7 +416,7 @@
                 
               
 
-              <time title="创建时间：2019-08-05 13:58:47 / 修改时间：21:11:08" itemprop="dateCreated datePublished" datetime="2019-08-05T13:58:47+08:00">2019-08-05</time>
+              <time title="创建时间：2019-08-05 13:58:47 / 修改时间：21:16:11" itemprop="dateCreated datePublished" datetime="2019-08-05T13:58:47+08:00">2019-08-05</time>
             </span>
           
 
@@ -542,7 +542,7 @@
 <p>编写一个 SQL 查询，找出每个部门工资最高的员工。例如，根据上述给定的表格，Max 在 IT 部门有最高工资，Henry 在 Sales 部门有最高工资。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">+<span class="comment">------------+----------+--------+</span></span><br><span class="line">| Department | Employee | Salary |</span><br><span class="line">+<span class="comment">------------+----------+--------+</span></span><br><span class="line">| IT         | Max      | 90000  |</span><br><span class="line">| Sales      | Henry    | 80000  |</span><br><span class="line">+<span class="comment">------------+----------+--------+</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution"></a>Solution</h3><p>首先可以在<code>Employee</code>表中根据<code>DepartmentId</code>分组找到每组最高<code>Salary</code>所代表的信息，也就是先创建一个临时表，包含了部门员工的最大薪资：<br>$\color{red}{<strong>此处特别注意: <code>select</code>中非聚集函数的列，都要在 <code>group by</code> 中</strong>}$</p>
+<h3 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution"></a>Solution</h3><p>首先可以在<code>Employee</code>表中根据<code>DepartmentId</code>分组找到每组最高<code>Salary</code>所代表的信息，也就是先创建一个临时表，包含了部门员工的最大薪资：<br><strong>此处特别注意: <code>select</code>中非聚集函数的列，都要在 <code>group by</code> 中</strong></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> DepartmentId, <span class="keyword">max</span>(Salary)</span><br><span class="line"><span class="keyword">from</span> Employee</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> DepartmentId</span><br></pre></td></tr></table></figure>
 
 <p>得出结果为</p>
