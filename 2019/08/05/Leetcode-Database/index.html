@@ -101,18 +101,18 @@
   };
 </script>
 
-  <meta name="description" content="TODO 不连接(即用,在from中分隔两表)和内连接的区别，是不是都可以产生笛卡尔积？ 连接时用的on和判断时用的where如何正确使用，同时使用时如何正确使用？详见183方法一 使用group by时，只要是select中非聚集函数的列，都要在 group by当中  181. Employees Earning More Than Their Managers来源：https://leetc">
+  <meta name="description" content="TODO 不连接交叉连接(即用,在from中分隔两表)和内连接的区别，是不是都可以产生笛卡尔积？ 连接时用的on和判断时用的where如何正确使用，同时使用时如何正确使用？详见183方法一 使用group by时，只要是select中非聚集函数的列，都要在 group by当中  NOTE1. 交叉连接与隐式内连接的区别个人理解是，没有where就是交叉连接，有where就是隐式内连接。产生的中间">
 <meta name="keywords" content="MySQL,笔试,面试,数据库,LeetCode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode Database做题笔记">
 <meta property="og:url" content="http://yoursite.com/2019/08/05/Leetcode-Database/index.html">
 <meta property="og:site_name" content="Jinchuan&#39;s Page">
-<meta property="og:description" content="TODO 不连接(即用,在from中分隔两表)和内连接的区别，是不是都可以产生笛卡尔积？ 连接时用的on和判断时用的where如何正确使用，同时使用时如何正确使用？详见183方法一 使用group by时，只要是select中非聚集函数的列，都要在 group by当中  181. Employees Earning More Than Their Managers来源：https://leetc">
+<meta property="og:description" content="TODO 不连接交叉连接(即用,在from中分隔两表)和内连接的区别，是不是都可以产生笛卡尔积？ 连接时用的on和判断时用的where如何正确使用，同时使用时如何正确使用？详见183方法一 使用group by时，只要是select中非聚集函数的列，都要在 group by当中  NOTE1. 交叉连接与隐式内连接的区别个人理解是，没有where就是交叉连接，有where就是隐式内连接。产生的中间">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-05T13:17:41.639Z">
+<meta property="og:updated_time" content="2019-08-06T06:01:09.198Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode Database做题笔记">
-<meta name="twitter:description" content="TODO 不连接(即用,在from中分隔两表)和内连接的区别，是不是都可以产生笛卡尔积？ 连接时用的on和判断时用的where如何正确使用，同时使用时如何正确使用？详见183方法一 使用group by时，只要是select中非聚集函数的列，都要在 group by当中  181. Employees Earning More Than Their Managers来源：https://leetc">
+<meta name="twitter:description" content="TODO 不连接交叉连接(即用,在from中分隔两表)和内连接的区别，是不是都可以产生笛卡尔积？ 连接时用的on和判断时用的where如何正确使用，同时使用时如何正确使用？详见183方法一 使用group by时，只要是select中非聚集函数的列，都要在 group by当中  NOTE1. 交叉连接与隐式内连接的区别个人理解是，没有where就是交叉连接，有where就是隐式内连接。产生的中间">
 
 
 
@@ -416,13 +416,23 @@
                 
               
 
-              <time title="创建时间：2019-08-05 13:58:47 / 修改时间：21:17:41" itemprop="dateCreated datePublished" datetime="2019-08-05T13:58:47+08:00">2019-08-05</time>
+              <time title="创建时间：2019-08-05 13:58:47" itemprop="dateCreated datePublished" datetime="2019-08-05T13:58:47+08:00">2019-08-05</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-06 14:01:09" itemprop="dateModified" datetime="2019-08-06T14:01:09+08:00">2019-08-06</time>
+              </span>
             
           
 
@@ -464,7 +474,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">3.9k</span>
+              <span title="本文字数">4.9k</span>
             </span>
           
 
@@ -496,22 +506,51 @@
 
       
         <h2 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h2><ul>
-<li>不连接(即用<code>,</code>在<code>from</code>中分隔两表)和内连接的区别，是不是都可以产生笛卡尔积？</li>
+<li><del>不连接</del>交叉连接(即用<code>,</code>在<code>from</code>中分隔两表)和内连接的区别，是不是都可以产生笛卡尔积？</li>
 <li>连接时用的<code>on</code>和判断时用的<code>where</code>如何正确使用，同时使用时如何正确使用？<a href="#">详见183方法一</a></li>
 <li>使用<code>group by</code>时，只要是<code>select</code>中非聚集函数的列，都要在 <code>group by</code>当中</li>
 </ul>
-<h2 id="181-Employees-Earning-More-Than-Their-Managers"><a href="#181-Employees-Earning-More-Than-Their-Managers" class="headerlink" title="181. Employees Earning More Than Their Managers"></a>181. Employees Earning More Than Their Managers</h2><p>来源：<a href="https://leetcode.com/problems/employees-earning-more-than-their-managers/description/" target="_blank" rel="noopener">https://leetcode.com/problems/employees-earning-more-than-their-managers/description/</a><br><strong>考察</strong>：同一个表内的信息对比，需要把一张表看作两张表分别对比条件进行查询，也就是从这个表里<strong>获取两次信息</strong>。可以用到内连接，也可以不用内连接直接查询。</p>
+<h2 id="NOTE"><a href="#NOTE" class="headerlink" title="NOTE"></a>NOTE</h2><h3 id="1-交叉连接与隐式内连接的区别"><a href="#1-交叉连接与隐式内连接的区别" class="headerlink" title="1. 交叉连接与隐式内连接的区别"></a>1. 交叉连接与隐式内连接的区别</h3><p>个人理解是，没有<code>where</code>就是交叉连接，有<code>where</code>就是隐式内连接。产生的中间表均为笛卡尔积，区别在于隐式内连接会对产生的笛卡尔积通过where进行过滤得到结果。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> 表<span class="number">1</span> <span class="keyword">CROSS</span> <span class="keyword">JOIN</span> 表<span class="number">2</span>; <span class="comment">--交叉连接</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> 表<span class="number">1</span>，表<span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p>隐式内连接不用<code>on</code>语句，而用<code>where</code></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> 表<span class="number">1</span>,表<span class="number">2</span> <span class="keyword">where</span> 表<span class="number">1.</span>关系字段 = 表<span class="number">2.</span>关系字段 <span class="comment">--隐式内连接</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-on-where-having的正确使用"><a href="#2-on-where-having的正确使用" class="headerlink" title="2. on, where, having的正确使用"></a>2. <code>on</code>, <code>where</code>, <code>having</code>的正确使用</h3><p>此处参考了<a href="https://blog.csdn.net/u013468917/article/details/61933994" target="_blank" rel="noopener">古月慕南</a>和<a href="https://my.oschina.net/lsl1991/blog/1921676" target="_blank" rel="noopener">LYQ1990</a>的博客，个人理解是</p>
+<ul>
+<li><p><code>on</code>用于建立关联关系, <code>where</code>用于筛选关联关系。  </p>
+</li>
+<li><p><code>on</code>是用于生成临时表时使用的条件。在<strong>外连接</strong>中，不管<code>on</code>的条件是否为真，都会返回<code>left join</code>中的左表信息，或者<code>right join</code>中的右表信息。</p>
+</li>
+<li><p><code>where</code>是在临时表生成之后对该临时表过滤用的条件，过滤掉条件不为真的所有信息。</p>
+</li>
+<li><p>在<strong>内连接</strong>中，条件放在<code>on</code>和<code>where</code>没区别，返回的结果集是相同的。  </p>
+</li>
+<li><p>在优先级方面，on &gt; where &gt; 聚合函数 &gt; having:</p>
+<blockquote>
+<p>表关联生成临时表， <strong>on 条件生效</strong>（此时的临时表会因为left join或right join的特性而一定带有主表的记录，也就是主表的记录不会被 on 条件过滤掉） –&gt; 临时表生成完毕，<strong>where条件过滤临时表</strong>（where条件过滤时因为临时表已经生成完毕，因此不会再具有left join或right join的特性，也就是主表记录也会被where条件过滤掉） –&gt; 临时表过滤完毕，<strong>聚合函数进行运算</strong> –&gt; 聚合函数运算完毕，<strong>having生效对运算完毕的临时表进行过滤</strong> –&gt;最终的结果表</p>
+</blockquote>
+<p>原文链接：<a href="https://blog.csdn.net/qq_27607579/article/details/83787592" target="_blank" rel="noopener">https://blog.csdn.net/qq_27607579/article/details/83787592</a></p>
+</li>
+</ul>
+<ul>
+<li><p><code>having</code>只与<code>group by</code> 连用， 即在分组过后过滤数据，条件中通常包含聚合函数。</p>
+</li>
+<li><p>① <code>WHERE</code> 子句用来筛选 <code>FROM</code> 子句中指定的操作所产生的行。<br>② <code>GROUP BY</code> 子句用来分组 <code>WHERE</code> 子句的输出。<br>③ <code>HAVING</code> 子句用来从分组的结果中筛选行。</p>
+</li>
+</ul>
+<h2 id="181-Employees-Earning-More-Than-Their-Managers"><a href="#181-Employees-Earning-More-Than-Their-Managers" class="headerlink" title="181. Employees Earning More Than Their Managers"></a>181. Employees Earning More Than Their Managers</h2><p>来源：<a href="https://leetcode.com/problems/employees-earning-more-than-their-managers/description/" target="_blank" rel="noopener">https://leetcode.com/problems/employees-earning-more-than-their-managers/description/</a><br>考察：同一个表内的信息对比，需要把一张表看作两张表分别对比条件进行查询，也就是从这个表里<strong>获取两次信息</strong>。可以用到内连接，也可以不用内连接直接查询。</p>
 <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p>Employee 表包含所有员工，他们的经理也属于员工。每个员工都有一个 Id，此外还有一列对应员工的经理的 Id。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">+<span class="comment">----+-------+--------+-----------+</span></span><br><span class="line">| Id | Name  | Salary | ManagerId |</span><br><span class="line">+<span class="comment">----+-------+--------+-----------+</span></span><br><span class="line">| 1  | Joe   | 70000  | 3         |</span><br><span class="line">| 2  | Henry | 80000  | 4         |</span><br><span class="line">| 3  | Sam   | 60000  | NULL      |</span><br><span class="line">| 4  | Max   | 90000  | NULL      |</span><br><span class="line">+<span class="comment">----+-------+--------+-----------+</span></span><br></pre></td></tr></table></figure>
 
 <p>给定 Employee 表，编写一个 SQL 查询，该查询可以获取收入超过他们经理的员工的姓名。在上面的表格中，Joe 是唯一一个收入超过他的经理的员工。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">+<span class="comment">----------+</span></span><br><span class="line">| Employee |</span><br><span class="line">+<span class="comment">----------+</span></span><br><span class="line">| Joe      |</span><br><span class="line">+<span class="comment">----------+</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>此处还要注意题目还要求<strong>最终输出结果</strong>的表头为Employee  </p>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>此处还要注意题目还要求<strong>最终输出结果</strong>的<strong>表头</strong>为Employee  </p>
 <h4 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> e1.Name <span class="keyword">as</span> Employee <span class="comment">--更改字段名,as可缺省</span></span><br><span class="line"><span class="keyword">from</span> Employee e1, Employee e2</span><br><span class="line"><span class="keyword">where</span> e1.ManagerId = e2.Id</span><br><span class="line"><span class="keyword">and</span> e1.Salary &gt; e2.Salary;</span><br><span class="line"><span class="comment">--用时461 ms</span></span><br></pre></td></tr></table></figure>
 
-<p>在<code>where</code>语句之前，产生的笛卡尔积，查询结果有4*4=16个</p>
-<h4 id="方法二：内连接"><a href="#方法二：内连接" class="headerlink" title="方法二：内连接"></a>方法二：内连接</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> e1.Name <span class="keyword">as</span> Employee</span><br><span class="line"><span class="keyword">from</span> Employee e1 <span class="keyword">inner</span> <span class="keyword">join</span> Employee e2</span><br><span class="line"><span class="keyword">on</span> e1.ManagerId = e2.Id</span><br><span class="line"><span class="keyword">and</span> e1.Salary &gt; e2.Salary;</span><br><span class="line"><span class="comment">--615 ms</span></span><br></pre></td></tr></table></figure>
+<p>在<code>where</code>语句之前，可以理解为<strong>交叉连接</strong>产生笛卡尔积，查询结果有4×4=16个。一般情况下不会使用交叉连接，这这业务需求比较少见。<br>在<strong>有</strong><code>where</code>语句时，语句表示一个<strong>隐性内连接</strong>，产生的中间表仍为笛卡尔积，结果用<code>where</code>语句过滤掉</p>
+<h4 id="方法二：内连接"><a href="#方法二：内连接" class="headerlink" title="方法二：内连接"></a>方法二：内连接</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> e1.Name <span class="keyword">as</span> Employee</span><br><span class="line"><span class="keyword">from</span> Employee e1 <span class="keyword">inner</span> <span class="keyword">join</span> Employee e2<span class="comment">--inner可缺省</span></span><br><span class="line"><span class="keyword">on</span> e1.ManagerId = e2.Id</span><br><span class="line"><span class="keyword">and</span> e1.Salary &gt; e2.Salary;</span><br><span class="line"><span class="comment">--615 ms</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="方法三：子查询"><a href="#方法三：子查询" class="headerlink" title="方法三：子查询"></a>方法三：子查询</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> e1.Name <span class="keyword">as</span> Employee</span><br><span class="line"><span class="keyword">from</span> Employee e1</span><br><span class="line"><span class="keyword">where</span> Salary &gt; (<span class="keyword">select</span> Salary</span><br><span class="line">                <span class="keyword">from</span> Employee e2</span><br><span class="line">                <span class="keyword">where</span> e2.Id = e1.ManagerId);</span><br><span class="line"><span class="comment">--974 ms</span></span><br></pre></td></tr></table></figure>
 
@@ -773,7 +812,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#TODO"><span class="nav-number">1.</span> <span class="nav-text">TODO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#181-Employees-Earning-More-Than-Their-Managers"><span class="nav-number">2.</span> <span class="nav-text">181. Employees Earning More Than Their Managers</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description"><span class="nav-number">2.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution"><span class="nav-number">2.2.</span> <span class="nav-text">Solution</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法一："><span class="nav-number">2.2.1.</span> <span class="nav-text">方法一：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法二：内连接"><span class="nav-number">2.2.2.</span> <span class="nav-text">方法二：内连接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法三：子查询"><span class="nav-number">2.2.3.</span> <span class="nav-text">方法三：子查询</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#183-Customers-Who-Never-Order"><span class="nav-number">3.</span> <span class="nav-text">183. Customers Who Never Order</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description-1"><span class="nav-number">3.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution-1"><span class="nav-number">3.2.</span> <span class="nav-text">Solution</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法一：左外连接"><span class="nav-number">3.2.1.</span> <span class="nav-text">方法一：左外连接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法二：子查询"><span class="nav-number">3.2.2.</span> <span class="nav-text">方法二：子查询</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#184-Department-Highest-Salary"><span class="nav-number">4.</span> <span class="nav-text">184. Department Highest Salary</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description-2"><span class="nav-number">4.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution-2"><span class="nav-number">4.2.</span> <span class="nav-text">Solution</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#TODO"><span class="nav-number">1.</span> <span class="nav-text">TODO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NOTE"><span class="nav-number">2.</span> <span class="nav-text">NOTE</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-交叉连接与隐式内连接的区别"><span class="nav-number">2.1.</span> <span class="nav-text">1. 交叉连接与隐式内连接的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-on-where-having的正确使用"><span class="nav-number">2.2.</span> <span class="nav-text">2. on, where, having的正确使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#181-Employees-Earning-More-Than-Their-Managers"><span class="nav-number">3.</span> <span class="nav-text">181. Employees Earning More Than Their Managers</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description"><span class="nav-number">3.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution"><span class="nav-number">3.2.</span> <span class="nav-text">Solution</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法一："><span class="nav-number">3.2.1.</span> <span class="nav-text">方法一：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法二：内连接"><span class="nav-number">3.2.2.</span> <span class="nav-text">方法二：内连接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法三：子查询"><span class="nav-number">3.2.3.</span> <span class="nav-text">方法三：子查询</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#183-Customers-Who-Never-Order"><span class="nav-number">4.</span> <span class="nav-text">183. Customers Who Never Order</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description-1"><span class="nav-number">4.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution-1"><span class="nav-number">4.2.</span> <span class="nav-text">Solution</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法一：左外连接"><span class="nav-number">4.2.1.</span> <span class="nav-text">方法一：左外连接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法二：子查询"><span class="nav-number">4.2.2.</span> <span class="nav-text">方法二：子查询</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#184-Department-Highest-Salary"><span class="nav-number">5.</span> <span class="nav-text">184. Department Highest Salary</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description-2"><span class="nav-number">5.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution-2"><span class="nav-number">5.2.</span> <span class="nav-text">Solution</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -809,7 +848,7 @@
       <i class="fa fa-area-chart"> 本站字数合计:</i>
     </span>
     
-    <span title="站点总字数">8k</span>
+    <span title="站点总字数">9k</span>
   
 
   
