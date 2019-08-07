@@ -8,8 +8,8 @@
         <category>笔试</category>
       </categories>
       <tags>
-        <tag>MySQL</tag>
         <tag>笔试</tag>
+        <tag>MySQL</tag>
         <tag>面试</tag>
         <tag>数据库</tag>
         <tag>LeetCode</tag>
@@ -23,9 +23,9 @@
         <category>笔试</category>
       </categories>
       <tags>
-        <tag>笔试</tag>
-        <tag>输入</tag>
         <tag>Java</tag>
+        <tag>输入</tag>
+        <tag>笔试</tag>
       </tags>
   </entry>
   <entry>
@@ -36,9 +36,9 @@
         <category>数据结构</category>
       </categories>
       <tags>
-        <tag>Java</tag>
         <tag>数据结构</tag>
         <tag>链表</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
