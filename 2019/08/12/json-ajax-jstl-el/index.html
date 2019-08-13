@@ -102,16 +102,16 @@
 </script>
 
   <meta name="description" content="TODO前言对前端了解不多，在Web开发的学习中，时不时会遇到各种各样的前端语法的困扰，多种相似的表达式混用难免蛋疼。虽说已有各种框架解决了对这些前端脚本的解析，但本文旨在列举和梳理其中的知识体系，以免再混淆。 JSP语法与JSP脚本此处参考了博客https://segmentfault.com/a/1190000013152739#articleHeader5 JSP(Java Server P">
-<meta name="keywords" content="JSP,Web,EL,JSTL,Ajax">
+<meta name="keywords" content="JSP,Web,EL,JSTL,Ajax,JSON,前端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JSP语法, EL, JSTL, Ajax之, Json间的区别与联系">
+<meta property="og:title" content="JSP语法, EL, JSTL, JSON，Ajax辨析">
 <meta property="og:url" content="http://yoursite.com/2019/08/12/json-ajax-jstl-el/index.html">
 <meta property="og:site_name" content="Jinchuan&#39;s Page">
 <meta property="og:description" content="TODO前言对前端了解不多，在Web开发的学习中，时不时会遇到各种各样的前端语法的困扰，多种相似的表达式混用难免蛋疼。虽说已有各种框架解决了对这些前端脚本的解析，但本文旨在列举和梳理其中的知识体系，以免再混淆。 JSP语法与JSP脚本此处参考了博客https://segmentfault.com/a/1190000013152739#articleHeader5 JSP(Java Server P">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-12T08:48:48.640Z">
+<meta property="og:updated_time" content="2019-08-13T00:30:26.236Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JSP语法, EL, JSTL, Ajax之, Json间的区别与联系">
+<meta name="twitter:title" content="JSP语法, EL, JSTL, JSON，Ajax辨析">
 <meta name="twitter:description" content="TODO前言对前端了解不多，在Web开发的学习中，时不时会遇到各种各样的前端语法的困扰，多种相似的表达式混用难免蛋疼。虽说已有各种框架解决了对这些前端脚本的解析，但本文旨在列举和梳理其中的知识体系，以免再混淆。 JSP语法与JSP脚本此处参考了博客https://segmentfault.com/a/1190000013152739#articleHeader5 JSP(Java Server P">
 
 
@@ -131,7 +131,7 @@
 </script>
 
   
-  <title>JSP语法, EL, JSTL, Ajax之, Json间的区别与联系 | Jinchuan's Page</title>
+  <title>JSP语法, EL, JSTL, JSON，Ajax辨析 | Jinchuan's Page</title>
   
 
 
@@ -390,7 +390,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JSP语法, EL, JSTL, Ajax之, Json间的区别与联系
+          <h1 class="post-title" itemprop="name headline">JSP语法, EL, JSTL, JSON，Ajax辨析
 
               
             
@@ -416,13 +416,23 @@
                 
               
 
-              <time title="创建时间：2019-08-12 13:58:39 / 修改时间：16:48:48" itemprop="dateCreated datePublished" datetime="2019-08-12T13:58:39+08:00">2019-08-12</time>
+              <time title="创建时间：2019-08-12 13:58:39" itemprop="dateCreated datePublished" datetime="2019-08-12T13:58:39+08:00">2019-08-12</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-13 08:30:26" itemprop="dateModified" datetime="2019-08-13T08:30:26+08:00">2019-08-13</time>
+              </span>
             
           
 
@@ -464,7 +474,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">4k</span>
+              <span title="本文字数">5.9k</span>
             </span>
           
 
@@ -476,7 +486,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span title="阅读时长">4 分钟</span>
+              <span title="阅读时长">5 分钟</span>
             </span>
           
 
@@ -530,7 +540,7 @@
 
 <h3 id="EL举例"><a href="#EL举例" class="headerlink" title="EL举例"></a>EL举例</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$&#123;username&#125; 取得request里面名字为username的属性值（如果不存在返回空字符串）</span><br><span class="line">$&#123;user.username&#125;</span><br><span class="line">$&#123;list[index]&#125;</span><br><span class="line">$&#123;map.key&#125;</span><br><span class="line">$&#123;pageContext.request.contextPath&#125;</span><br><span class="line"></span><br><span class="line">$&#123;<span class="number">10</span>+<span class="number">89</span>&#125; 支持放置表达式运算</span><br><span class="line">$&#123;age&gt;<span class="number">10</span>&#125;</span><br><span class="line">$&#123;empty user&#125; 是否是<span class="literal">null</span>对象</span><br></pre></td></tr></table></figure>
 
-<p>运算符号最好在{}内部实现，比如${a.count*b.price},而不能写成${a.count}×${b.price}</p>
+<p>运算符号最好在{}内部实现，比如${a.count*b.price},而不能写成${a.count}<br>*<br>${b.price}</p>
 <h2 id="JSTL"><a href="#JSTL" class="headerlink" title="JSTL"></a>JSTL</h2><p>此处参考了博客<a href="https://blog.csdn.net/qq_42350238/article/details/88994988" target="_blank" rel="noopener">https://blog.csdn.net/qq_42350238/article/details/88994988</a></p>
 <p>JSTL（JavaServer Pages Standard Tag Library，JSP标准标签库)是一个不断完善的开源的JSP标签库,通常与EL表达式合作实现JSP页面的编写，让JSP写起来更加简单，优雅。可以让JSP页面在不写java代码的情况下实现取数据。</p>
 <p>jstl是一个标签库，什么是标签库？可以只用一些自定义有自定义功能的标签。</p>
@@ -555,8 +565,50 @@
 
 <h4 id="循环标签"><a href="#循环标签" class="headerlink" title="循环标签"></a>循环标签</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;c:forEach items=<span class="string">"$&#123;lists &#125;"</span> <span class="keyword">var</span>=<span class="string">"user"</span>&gt;</span><br><span class="line">$&#123;user.username &#125;:$&#123;user.age &#125;&lt;br/&gt;</span><br><span class="line">&lt;<span class="regexp">/c:forEach&gt;</span></span><br><span class="line"><span class="regexp">&lt;c:forEach items="$&#123;map &#125;" var="kv"&gt;</span></span><br><span class="line"><span class="regexp">$&#123;kv.key &#125;:$&#123;kv.value &#125;&lt;br/</span>&gt;</span><br><span class="line">&lt;<span class="regexp">/c:forEach&gt;</span></span><br><span class="line"><span class="regexp">（要给属性提供get方法）</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><p>JSON (JavaScript Object Notation, JS 对象简谱) 是一种轻量级的数据交换格式,采用完全独立于编程语言的文本格式来存储和表示数据.</p>
-<h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2>
+<h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><p>JSON (JavaScript Object Notation, JS对象表达) 是一种轻量级的数据交换格式,采用完全独立于编程语言的文本格式来存储和表示数据. 详细介绍可参考<a href="http://www.json.org/json-zh.html" target="_blank" rel="noopener">http://www.json.org/json-zh.html</a></p>
+<p>JSON只用于存储可被解析的数据，其本质是一个字符串</p>
+<p>JSON出现之前，通常用XML来传递数据。XML也是一种<strong>纯文本格式，所以它适合在网络上交换数据</strong>，但由于XML规范繁琐复杂，  </p>
+<p>格式非常简单，有两种结构。</p>
+<h3 id="JSON两种结构"><a href="#JSON两种结构" class="headerlink" title="JSON两种结构"></a>JSON两种结构</h3><h4 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h4><p>对象结构以<code>{</code>大括号开始，以<code>}</code>大括号结束。内部由多个键值对构成，键值对之间由<code>,</code>分隔:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"小明"</span>,</span><br><span class="line">  <span class="attr">"age"</span>: <span class="number">14</span>,</span><br><span class="line">  <span class="attr">"gender"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"height"</span>: <span class="number">1.65</span>,</span><br><span class="line">  <span class="attr">"grade"</span>: <span class="literal">null</span>,</span><br><span class="line">  <span class="attr">"middle-school"</span>: <span class="string">"\"W3C\" Middle School"</span>,</span><br><span class="line">  <span class="attr">"skills"</span>: [</span><br><span class="line">            <span class="string">"JavaScript"</span>,</span><br><span class="line">            <span class="string">"Java"</span>,</span><br><span class="line">            <span class="string">"Python"</span>,</span><br><span class="line">            <span class="string">"Lisp"</span></span><br><span class="line">            ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>相当于一个JavaBean，对象中包含了一个</p>
+<h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><p>数组类型可以是对象类型，即元素是对象。由方括号<code>[ ]</code>规定。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"name"</span>: <span class="string">"小明"</span>,</span><br><span class="line">      <span class="attr">"age"</span>: <span class="number">14</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"name"</span>: <span class="string">"小华"</span>,</span><br><span class="line">      <span class="attr">"age"</span>: <span class="number">22</span>,  </span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h3 id="JSON注意事项"><a href="#JSON注意事项" class="headerlink" title="JSON注意事项"></a>JSON注意事项</h3><ul>
+<li><p>JSON规定字符集必须是UTF-8。</p>
+</li>
+<li><p>为了统一解析，JSON的字符串规定必须用双引号<code>&quot;&quot;</code>，Object的键也必须用双引号<code>&quot;&quot;</code>。</p>
+</li>
+</ul>
+<p>此处参考了<a href="https://www.liaoxuefeng.com/wiki/1022910821149312/1023021554858080" target="_blank" rel="noopener">廖雪峰的官方网站对JS的讲解</a></p>
+<h3 id="JSON字符串与JSON对象辨析"><a href="#JSON字符串与JSON对象辨析" class="headerlink" title="JSON字符串与JSON对象辨析"></a>JSON字符串与JSON对象辨析</h3><ul>
+<li><p>字符串：指使用“”双引号或’’单引号包括的字符。例如：var comStr = ‘this is string’;</p>
+</li>
+<li><p>json字符串：指的是符合json格式要求的js字符串。例如：var jsonStr = “{StudentID:’100’,Name:’tmac’,Hometown:’usa’}”;</p>
+</li>
+<li><p>json对象：指符合json格式要求的js对象。例如：var jsonObj = { StudentID: “100”, Name: “tmac”, Hometown: “usa” };</p>
+</li>
+</ul>
+<p>此处参考了<a href="https://www.cnblogs.com/mcgrady/archive/2013/06/08/3127781.html" target="_blank" rel="noopener">mcgrady的博客</a></p>
+<h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2><p>Ajax, 即“Asynchronous Javascript And XML”（异步 JavaScript 和 XML），是指一种创建交互式网页应用的网页开发技术。是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。</p>
+<p>最常用的应用就是在前端注册信息时，不刷新网页的情况下校验是否存在重复的用户名，或者校验输入的邮箱格式是否正确。</p>
+<ul>
+<li><p>作用：在不进行页面跳转或者页面刷新的情况下，向服务器发起请求，并取得服务器响应的数据。</p>
+</li>
+<li><p>应用领域：数据校验</p>
+</li>
+<li><p>优点： ①用户体验比较好(不需要页面跳转，速度快)    ②服务器压力比较小</p>
+</li>
+</ul>
+<h3 id="jQuery发起Ajax请求"><a href="#jQuery发起Ajax请求" class="headerlink" title="jQuery发起Ajax请求"></a>jQuery发起Ajax请求</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">	url:<span class="string">"xxxservlet"</span>,</span><br><span class="line">	type:<span class="string">"post"</span>,</span><br><span class="line">	data:&#123;</span><br><span class="line">		key:value,</span><br><span class="line">		key:value</span><br><span class="line">	&#125;,</span><br><span class="line">	dataType:<span class="string">"json"</span>,</span><br><span class="line">	success:<span class="function"><span class="keyword">function</span>(<span class="params">msg</span>)</span>&#123;</span><br><span class="line">		msg.key;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>其他参数和用法<a href="http://api.jquery.com/jQuery.ajax/" target="_blank" rel="noopener">http://api.jquery.com/jQuery.ajax/</a></p>
+<h3 id="JavaScript发起Ajax请求"><a href="#JavaScript发起Ajax请求" class="headerlink" title="JavaScript发起Ajax请求"></a>JavaScript发起Ajax请求</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xmlhttp = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">xmlhttp.open(<span class="string">"GET"</span>,<span class="string">"xxxservlet"</span>,<span class="literal">true</span>);</span><br><span class="line">xmlhttp.send();</span><br><span class="line">xmlhttp.onreadystatechange=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (xmlhttp.readyState==<span class="number">4</span> &amp;&amp; xmlhttp.status==<span class="number">200</span>)&#123;</span><br><span class="line">		<span class="comment">//成功后的处理</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其他参数和用法<a href="http://www.w3school.com.cn/ajax/ajax_xmlhttprequest_send.asp" target="_blank" rel="noopener">http://www.w3school.com.cn/ajax/ajax_xmlhttprequest_send.asp</a></p>
+
       
     </div>
 
@@ -595,6 +647,10 @@
             <a href="/tags/JSTL/" rel="tag"># JSTL</a>
           
             <a href="/tags/Ajax/" rel="tag"># Ajax</a>
+          
+            <a href="/tags/JSON/" rel="tag"># JSON</a>
+          
+            <a href="/tags/前端/" rel="tag"># 前端</a>
           
         </div>
       
@@ -753,7 +809,11 @@
         
           
         
-        <span class="site-state-item-count">14</span>
+          
+        
+          
+        
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
@@ -790,7 +850,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#TODO"><span class="nav-number">1.</span> <span class="nav-text">TODO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">2.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP语法与JSP脚本"><span class="nav-number">3.</span> <span class="nav-text">JSP语法与JSP脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JSP初印象"><span class="nav-number">3.1.</span> <span class="nav-text">JSP初印象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSP语法"><span class="nav-number">3.2.</span> <span class="nav-text">JSP语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JSP脚本"><span class="nav-number">3.2.1.</span> <span class="nav-text">JSP脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#JSP内容输出表达式"><span class="nav-number">3.2.1.1.</span> <span class="nav-text">JSP内容输出表达式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#JSP内容定义表达式"><span class="nav-number">3.2.1.2.</span> <span class="nav-text">JSP内容定义表达式</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JSP注释"><span class="nav-number">3.2.2.</span> <span class="nav-text">JSP注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JSP指令"><span class="nav-number">3.2.3.</span> <span class="nav-text">JSP指令</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EL表达式"><span class="nav-number">4.</span> <span class="nav-text">EL表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#EL能干什么"><span class="nav-number">4.1.</span> <span class="nav-text">EL能干什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EL表达式语法结构"><span class="nav-number">4.2.</span> <span class="nav-text">EL表达式语法结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EL举例"><span class="nav-number">4.3.</span> <span class="nav-text">EL举例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSTL"><span class="nav-number">5.</span> <span class="nav-text">JSTL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JSTL的引入"><span class="nav-number">5.1.</span> <span class="nav-text">JSTL的引入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSTL的使用-常用标签举例"><span class="nav-number">5.2.</span> <span class="nav-text">JSTL的使用(常用标签举例)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#跟数据存储相关：-set-out-remove"><span class="nav-number">5.2.1.</span> <span class="nav-text">跟数据存储相关： set, out, remove</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#条件标签"><span class="nav-number">5.2.2.</span> <span class="nav-text">条件标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#循环标签"><span class="nav-number">5.2.3.</span> <span class="nav-text">循环标签</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSON"><span class="nav-number">6.</span> <span class="nav-text">JSON</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ajax"><span class="nav-number">7.</span> <span class="nav-text">Ajax</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#TODO"><span class="nav-number">1.</span> <span class="nav-text">TODO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">2.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP语法与JSP脚本"><span class="nav-number">3.</span> <span class="nav-text">JSP语法与JSP脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JSP初印象"><span class="nav-number">3.1.</span> <span class="nav-text">JSP初印象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSP语法"><span class="nav-number">3.2.</span> <span class="nav-text">JSP语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JSP脚本"><span class="nav-number">3.2.1.</span> <span class="nav-text">JSP脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#JSP内容输出表达式"><span class="nav-number">3.2.1.1.</span> <span class="nav-text">JSP内容输出表达式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#JSP内容定义表达式"><span class="nav-number">3.2.1.2.</span> <span class="nav-text">JSP内容定义表达式</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JSP注释"><span class="nav-number">3.2.2.</span> <span class="nav-text">JSP注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JSP指令"><span class="nav-number">3.2.3.</span> <span class="nav-text">JSP指令</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EL表达式"><span class="nav-number">4.</span> <span class="nav-text">EL表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#EL能干什么"><span class="nav-number">4.1.</span> <span class="nav-text">EL能干什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EL表达式语法结构"><span class="nav-number">4.2.</span> <span class="nav-text">EL表达式语法结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EL举例"><span class="nav-number">4.3.</span> <span class="nav-text">EL举例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSTL"><span class="nav-number">5.</span> <span class="nav-text">JSTL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JSTL的引入"><span class="nav-number">5.1.</span> <span class="nav-text">JSTL的引入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSTL的使用-常用标签举例"><span class="nav-number">5.2.</span> <span class="nav-text">JSTL的使用(常用标签举例)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#跟数据存储相关：-set-out-remove"><span class="nav-number">5.2.1.</span> <span class="nav-text">跟数据存储相关： set, out, remove</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#条件标签"><span class="nav-number">5.2.2.</span> <span class="nav-text">条件标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#循环标签"><span class="nav-number">5.2.3.</span> <span class="nav-text">循环标签</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSON"><span class="nav-number">6.</span> <span class="nav-text">JSON</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JSON两种结构"><span class="nav-number">6.1.</span> <span class="nav-text">JSON两种结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#对象"><span class="nav-number">6.1.1.</span> <span class="nav-text">对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数组"><span class="nav-number">6.1.2.</span> <span class="nav-text">数组</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSON注意事项"><span class="nav-number">6.2.</span> <span class="nav-text">JSON注意事项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSON字符串与JSON对象辨析"><span class="nav-number">6.3.</span> <span class="nav-text">JSON字符串与JSON对象辨析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ajax"><span class="nav-number">7.</span> <span class="nav-text">Ajax</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#jQuery发起Ajax请求"><span class="nav-number">7.1.</span> <span class="nav-text">jQuery发起Ajax请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript发起Ajax请求"><span class="nav-number">7.2.</span> <span class="nav-text">JavaScript发起Ajax请求</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -826,7 +886,7 @@
       <i class="fa fa-area-chart"> 本站字数合计:</i>
     </span>
     
-    <span title="站点总字数">13k</span>
+    <span title="站点总字数">14k</span>
   
 
   
