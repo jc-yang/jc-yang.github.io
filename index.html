@@ -454,6 +454,18 @@
           
             
             
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2019/08/12/json-ajax-jstl-el/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/12/json-ajax-jstl-el/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -660,6 +672,18 @@ JSP(Java Server Page), Java服务器界面，是一种特殊的简化的Servlet�
 
           
             
+            
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2019/08/05/Leetcode-Database/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/05/Leetcode-Database/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -872,6 +896,18 @@ SELECT
           
             
             
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2019/07/30/scanner_input/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/30/scanner_input/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -1068,6 +1104,18 @@ SELECT
           
             
             
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2019/07/30/linkedList/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/30/linkedList/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -1248,6 +1296,18 @@ package SqList;/** * 单链表 * @author YJC *
 
           
             
+            
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2019/07/24/hello-world/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/24/hello-world/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -1673,6 +1733,32 @@ M
 
 
 
+
+
+  
+
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: '1fPkUaxsb7ckwXxjChdzC4vD-9Nh9j0Va',
+    appKey: 't2wFNRtn51kUf1Pu0bdcRNDF',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn'
+  });
+</script>
 
 
 
