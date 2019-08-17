@@ -109,7 +109,7 @@
 <meta property="og:site_name" content="Jinchuan&#39;s Page">
 <meta property="og:description" content="136 只出现一次的数字https://leetcode-cn.com/problems/single-number/ 169 求众数https://leetcode-cn.com/problems/two-sum/solution/qiu-zhong-shu-by-leetcode-2/ 1int major = nums.length/2;//求众数的条件  方法一 暴力搜索法 不建议，时间复">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-17T07:48:26.759Z">
+<meta property="og:updated_time" content="2019-08-17T12:31:31.693Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode 2018面试高频算法">
 <meta name="twitter:description" content="136 只出现一次的数字https://leetcode-cn.com/problems/single-number/ 169 求众数https://leetcode-cn.com/problems/two-sum/solution/qiu-zhong-shu-by-leetcode-2/ 1int major = nums.length/2;//求众数的条件  方法一 暴力搜索法 不建议，时间复">
@@ -416,7 +416,7 @@
                 
               
 
-              <time title="创建时间：2019-08-17 14:43:51 / 修改时间：15:48:26" itemprop="dateCreated datePublished" datetime="2019-08-17T14:43:51+08:00">2019-08-17</time>
+              <time title="创建时间：2019-08-17 14:43:51 / 修改时间：20:31:31" itemprop="dateCreated datePublished" datetime="2019-08-17T14:43:51+08:00">2019-08-17</time>
             </span>
           
 
@@ -476,7 +476,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">3k</span>
+              <span title="本文字数">3.9k</span>
             </span>
           
 
@@ -488,7 +488,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span title="阅读时长">4 分钟</span>
+              <span title="阅读时长">5 分钟</span>
             </span>
           
 
@@ -528,11 +528,22 @@
 <p>初始化 nums1 和 nums2 的元素数量分别为 m 和 n。<br>你可以假设 nums1 有足够的空间（空间大小大于或等于 m + n）来保存 nums2 中的元素。<br>示例:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">输入:</span><br><span class="line">nums1 = [1,2,3,0,0,0], m = 3</span><br><span class="line">nums2 = [2,5,6],       n = 3</span><br><span class="line"></span><br><span class="line">输出: [1,2,2,3,5,6]</span><br></pre></td></tr></table></figure>
 
-<p>此处考虑到若从前往后 比较并排序需要把后面的数字挪动，为避免挪动增大空间复杂度，从后往前比较并填充</p>
+<p>此处考虑到若从前往后 比较并排序需要把后面的数字挪动，为避免挪动增大空间复杂度，<strong>从后往前比较并填充</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span> m, <span class="keyword">int</span>[] nums2, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> p = m+n-<span class="number">1</span>;<span class="comment">//合并后的最大下标</span></span><br><span class="line">		m--;<span class="comment">//最大下标</span></span><br><span class="line">		n--;</span><br><span class="line">		<span class="keyword">while</span>(n&gt;=<span class="number">0</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span>(m&gt;=<span class="number">0</span> &amp;&amp; nums1[m]&gt;nums2[n]) &#123;<span class="comment">//注意判断次序， 需要先判断m再判断数组</span></span><br><span class="line">				nums1[p] = nums1[m];</span><br><span class="line">				m--;</span><br><span class="line">				p--;</span><br><span class="line">			&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">				nums1[p] = nums2[n];</span><br><span class="line">				n--;</span><br><span class="line">				p--;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>简化后</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span> m, <span class="keyword">int</span>[] nums2, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> p = m-- + --n;</span><br><span class="line">    <span class="keyword">while</span>(n&gt;=<span class="number">0</span>)&#123;</span><br><span class="line">      nums1[p--] = m&gt;=<span class="number">0</span> &amp;&amp; nums1[m]&gt;nums2[n] ? nums1[m--]:nums2[n--];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="125-验证回文串"><a href="#125-验证回文串" class="headerlink" title="125. 验证回文串"></a>125. 验证回文串</h2><p><a href="https://leetcode-cn.com/problems/valid-palindrome/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/valid-palindrome/</a></p>
+<p>给定一个字符串，验证它是否是回文串，只考虑字母和数字字符，可以忽略字母的大小写。</p>
+<p>说明：本题中，我们将空字符串定义为有效的回文串。</p>
+<p>示例 1:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;A man, a plan, a canal: Panama&quot;</span><br><span class="line">输出: true</span><br></pre></td></tr></table></figure>
+
+<p>示例 2:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;race a car&quot;</span><br><span class="line">输出: false</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isPalindrome</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (s == <span class="keyword">null</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	s = s.toLowerCase();<span class="comment">// 都转为小写</span></span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>, j = s.length() - <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">		<span class="keyword">while</span> (!isLawful(s.charAt(i))) &#123;</span><br><span class="line">			i++;</span><br><span class="line">			<span class="keyword">if</span> (i == s.length())</span><br><span class="line">				<span class="keyword">return</span> <span class="keyword">true</span>;<span class="comment">// 空字符串</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">while</span> (!isLawful(s.charAt(j))) &#123;</span><br><span class="line">			j--;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">char</span> ichar = s.charAt(i);</span><br><span class="line">		<span class="keyword">char</span> jchar = s.charAt(j);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (s.charAt(i) != s.charAt(j))</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">		i++;</span><br><span class="line">		j--;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isLawful</span><span class="params">(<span class="keyword">char</span> c)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span> || c &gt;= <span class="string">'a'</span> &amp;&amp; c &lt;= <span class="string">'z'</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -782,7 +793,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#136-只出现一次的数字"><span class="nav-number">1.</span> <span class="nav-text">136 只出现一次的数字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#169-求众数"><span class="nav-number">2.</span> <span class="nav-text">169 求众数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一-暴力搜索法"><span class="nav-number">2.1.</span> <span class="nav-text">方法一 暴力搜索法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法二-Map遍历法"><span class="nav-number">2.2.</span> <span class="nav-text">方法二 Map遍历法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法三-Boyer-Moore-投票算法"><span class="nav-number">2.3.</span> <span class="nav-text">方法三 Boyer-Moore 投票算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#88-合并两个有序数组"><span class="nav-number">3.</span> <span class="nav-text">88. 合并两个有序数组</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#136-只出现一次的数字"><span class="nav-number">1.</span> <span class="nav-text">136 只出现一次的数字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#169-求众数"><span class="nav-number">2.</span> <span class="nav-text">169 求众数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一-暴力搜索法"><span class="nav-number">2.1.</span> <span class="nav-text">方法一 暴力搜索法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法二-Map遍历法"><span class="nav-number">2.2.</span> <span class="nav-text">方法二 Map遍历法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法三-Boyer-Moore-投票算法"><span class="nav-number">2.3.</span> <span class="nav-text">方法三 Boyer-Moore 投票算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#88-合并两个有序数组"><span class="nav-number">3.</span> <span class="nav-text">88. 合并两个有序数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#125-验证回文串"><span class="nav-number">4.</span> <span class="nav-text">125. 验证回文串</span></a></li></ol></div>
             
 
           </div>
@@ -818,7 +829,7 @@
       <i class="fa fa-area-chart"> 本站字数合计:</i>
     </span>
     
-    <span title="站点总字数">23k</span>
+    <span title="站点总字数">24k</span>
   
 
   
