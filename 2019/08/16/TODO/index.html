@@ -101,18 +101,18 @@
   };
 </script>
 
-  <meta name="description" content="正则表达式字符串拼接性能https://blog.csdn.net/KimSoft/article/details/3353849https://blog.csdn.net/flashdelover/article/details/50249701 KMPHashMap内部结构，调用put方法时如何实现HashSet是如何保证元素不重复的MySQL中插入一千万条数据如何是实现String，Stri">
+  <meta name="description" content="正则表达式字符串拼接性能 &amp;amp; StringBuffer与StringBuilder参考博客https://www.cnblogs.com/lojun/articles/9664794.htmlhttps://blog.csdn.net/u014086926/article/details/52069074 字符串拼接性能在大部分情况下 StringBuilder &amp;gt; StringBu">
 <meta name="keywords" content="面试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TODO:正则表达式，字符串拼接性能，设计购物车，KMP">
 <meta property="og:url" content="http://yoursite.com/2019/08/16/TODO/index.html">
 <meta property="og:site_name" content="Jinchuan&#39;s Page">
-<meta property="og:description" content="正则表达式字符串拼接性能https://blog.csdn.net/KimSoft/article/details/3353849https://blog.csdn.net/flashdelover/article/details/50249701 KMPHashMap内部结构，调用put方法时如何实现HashSet是如何保证元素不重复的MySQL中插入一千万条数据如何是实现String，Stri">
+<meta property="og:description" content="正则表达式字符串拼接性能 &amp;amp; StringBuffer与StringBuilder参考博客https://www.cnblogs.com/lojun/articles/9664794.htmlhttps://blog.csdn.net/u014086926/article/details/52069074 字符串拼接性能在大部分情况下 StringBuilder &amp;gt; StringBu">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-16T13:04:32.700Z">
+<meta property="og:updated_time" content="2019-08-19T02:55:38.552Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TODO:正则表达式，字符串拼接性能，设计购物车，KMP">
-<meta name="twitter:description" content="正则表达式字符串拼接性能https://blog.csdn.net/KimSoft/article/details/3353849https://blog.csdn.net/flashdelover/article/details/50249701 KMPHashMap内部结构，调用put方法时如何实现HashSet是如何保证元素不重复的MySQL中插入一千万条数据如何是实现String，Stri">
+<meta name="twitter:description" content="正则表达式字符串拼接性能 &amp;amp; StringBuffer与StringBuilder参考博客https://www.cnblogs.com/lojun/articles/9664794.htmlhttps://blog.csdn.net/u014086926/article/details/52069074 字符串拼接性能在大部分情况下 StringBuilder &amp;gt; StringBu">
 
 
 
@@ -416,13 +416,23 @@
                 
               
 
-              <time title="创建时间：2019-08-16 19:42:25 / 修改时间：21:04:32" itemprop="dateCreated datePublished" datetime="2019-08-16T19:42:25+08:00">2019-08-16</time>
+              <time title="创建时间：2019-08-16 19:42:25" itemprop="dateCreated datePublished" datetime="2019-08-16T19:42:25+08:00">2019-08-16</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-19 10:55:38" itemprop="dateModified" datetime="2019-08-19T10:55:38+08:00">2019-08-19</time>
+              </span>
             
           
 
@@ -476,7 +486,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">435</span>
+              <span title="本文字数">2k</span>
             </span>
           
 
@@ -488,7 +498,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span title="阅读时长">1 分钟</span>
+              <span title="阅读时长">2 分钟</span>
             </span>
           
 
@@ -507,7 +517,38 @@
       
 
       
-        <h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><h2 id="字符串拼接性能"><a href="#字符串拼接性能" class="headerlink" title="字符串拼接性能"></a>字符串拼接性能</h2><p><a href="https://blog.csdn.net/KimSoft/article/details/3353849" target="_blank" rel="noopener">https://blog.csdn.net/KimSoft/article/details/3353849</a><br><a href="https://blog.csdn.net/flashdelover/article/details/50249701" target="_blank" rel="noopener">https://blog.csdn.net/flashdelover/article/details/50249701</a></p>
+        <h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><h2 id="字符串拼接性能-amp-StringBuffer与StringBuilder"><a href="#字符串拼接性能-amp-StringBuffer与StringBuilder" class="headerlink" title="字符串拼接性能 &amp; StringBuffer与StringBuilder"></a>字符串拼接性能 &amp; StringBuffer与StringBuilder</h2><p>参考博客<br><a href="https://www.cnblogs.com/lojun/articles/9664794.html" target="_blank" rel="noopener">https://www.cnblogs.com/lojun/articles/9664794.html</a><br><a href="https://blog.csdn.net/u014086926/article/details/52069074" target="_blank" rel="noopener">https://blog.csdn.net/u014086926/article/details/52069074</a></p>
+<h3 id="字符串拼接性能"><a href="#字符串拼接性能" class="headerlink" title="字符串拼接性能"></a>字符串拼接性能</h3><p>在大部分情况下 StringBuilder &gt; StringBuffer &gt; String</p>
+<p>相当于 不加锁&gt;加锁&gt;创建新对象</p>
+<ul>
+<li><p>用+的方式效率最差，concat由于是String内部方法，性能优于+的方式：str.concat(“new str”);</p>
+</li>
+<li><p>单线程下字符串的串联用StringBuilder的append，多线程下字符串的串联用StrngBuffer的append；</p>
+</li>
+<li><p>字符串的加号“+” 方法，虽然编译器对其做了优化，使用StringBuilder的append方法进行追加，但是每循环一次都会创建一个StringBuilder对象，且都会调用toString方法转换成字符串，所以开销很大</p>
+</li>
+<li><p>在<strong>编译阶段就能够确定的字符串常量</strong>，完全没有必要创建String或StringBuffer对象。直接使用字符串常量的”+”连接操作效率最高（如：String str = “a” + “b” + “c”;）</p>
+</li>
+</ul>
+<p>举例说明：</p>
+<p>单个String对象的字符串拼接在<strong>编译阶段</strong>被 JVM 解释成了StringBuilder虽然也被对象的拼接，所以这些时候 String 对象的速度并不会比 StringBuffer 对象慢，而特别是以下的字符串对象生成中，String 效率是远要比 StringBuffer 快的：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String S1 = “This is only a” + “ simple” + “ test”;<span class="comment">//快</span></span><br><span class="line">StringBuffer Sb = <span class="keyword">new</span> StringBuffer(“This is only a”).append(“ simple”).append(“ test”);<span class="comment">//慢</span></span><br></pre></td></tr></table></figure>
+
+<p> 这种方式生成 String S1 对象的速度简直太快了，而这个时候 StringBuffer速度上根本一点都不占优势。其实这是 JVM 的一个把戏，在 JVM 眼里，这个</p>
+<p> String S1 = “This is only a” + “ simple” + “test”;</p>
+<p>其实就是：<br> String S1 = “This is only a simple test”;</p>
+<p>所以当然不需要太多的时间了。但如果字符串是来自另外的 String 对象的话，速度就没那么快了，譬如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String S2 = “This is only a”;</span><br><span class="line">String S3 = “ simple”;</span><br><span class="line">String S4 = “ test”;</span><br><span class="line">String S1 = S2 +S3 + S4;</span><br></pre></td></tr></table></figure>
+
+<p>这时候 JVM 会规规矩矩的按照原来的方式去做，疯狂创建对象并连接。</p>
+<h3 id="StringBuffer与StringBuilder"><a href="#StringBuffer与StringBuilder" class="headerlink" title="StringBuffer与StringBuilder"></a>StringBuffer与StringBuilder</h3><ul>
+<li><p>String对象是不可变的，修改String时重新指向另一个对象，而非在原地址进行修改。String被<code>final</code>修饰，不可继承，实例化后不能被修改。其本质上是一个<code>final</code>修饰的字符数组char[]。<code>final</code>修饰的叫不可变类，一旦对象创建在内存中就不可变。String是线程安全的，因为string内部存储字符串的char数组以及和char数组相关的信息都是final的。</p>
+</li>
+<li><p>StringBuilder虽然也被<code>final</code>修饰，但其底层的char数组并非<code>final</code>(定义在其父类AbstractStringBuilder中)，是一个可以被修改的动态数组。所有方法没有被synchronized修饰，并<strong>非线程安全</strong>。</p>
+</li>
+<li><p>StringBuffer也被<code>final</code>修饰，但其<strong>线程安全</strong>，因为里面所有方法都被<code>synchronized</code>修饰。</p>
+</li>
+</ul>
 <h2 id="KMP"><a href="#KMP" class="headerlink" title="KMP"></a>KMP</h2><h2 id="HashMap内部结构，调用put方法时如何实现"><a href="#HashMap内部结构，调用put方法时如何实现" class="headerlink" title="HashMap内部结构，调用put方法时如何实现"></a>HashMap内部结构，调用put方法时如何实现</h2><h2 id="HashSet是如何保证元素不重复的"><a href="#HashSet是如何保证元素不重复的" class="headerlink" title="HashSet是如何保证元素不重复的"></a>HashSet是如何保证元素不重复的</h2><h2 id="MySQL中插入一千万条数据如何是实现"><a href="#MySQL中插入一千万条数据如何是实现" class="headerlink" title="MySQL中插入一千万条数据如何是实现"></a>MySQL中插入一千万条数据如何是实现</h2><h2 id="String，StringBuffer，StringBuilder"><a href="#String，StringBuffer，StringBuilder" class="headerlink" title="String，StringBuffer，StringBuilder"></a>String，StringBuffer，StringBuilder</h2><h2 id="数组-Array-和列表-ArrayList-的区别？什么时候应该使用Array而不是ArrayList？"><a href="#数组-Array-和列表-ArrayList-的区别？什么时候应该使用Array而不是ArrayList？" class="headerlink" title="数组(Array)和列表(ArrayList)的区别？什么时候应该使用Array而不是ArrayList？"></a>数组(Array)和列表(ArrayList)的区别？什么时候应该使用Array而不是ArrayList？</h2><h2 id="hashCode与equals"><a href="#hashCode与equals" class="headerlink" title="hashCode与equals"></a>hashCode与equals</h2><h2 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h2><h2 id="HashMap-HashTable-ConcurrentHashMap"><a href="#HashMap-HashTable-ConcurrentHashMap" class="headerlink" title="HashMap, HashTable, ConcurrentHashMap"></a>HashMap, HashTable, ConcurrentHashMap</h2><h2 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h2><h2 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h2><p>有三个比较容易混淆的概念：</p>
 <p>Java内存模型（Java Memory Model（JMM））<br>JVM内存结构（JVM内存分区）<br>Java对象结构</p>
 <h2 id="GC"><a href="#GC" class="headerlink" title="GC"></a>GC</h2><h2 id="NIO，AIO，多路复用"><a href="#NIO，AIO，多路复用" class="headerlink" title="NIO，AIO，多路复用"></a>NIO，AIO，多路复用</h2><h2 id="三次握手，四次挥手"><a href="#三次握手，四次挥手" class="headerlink" title="三次握手，四次挥手"></a>三次握手，四次挥手</h2><h2 id="死锁与解锁"><a href="#死锁与解锁" class="headerlink" title="死锁与解锁"></a>死锁与解锁</h2>
@@ -758,7 +799,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#正则表达式"><span class="nav-number">1.</span> <span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串拼接性能"><span class="nav-number">2.</span> <span class="nav-text">字符串拼接性能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#KMP"><span class="nav-number">3.</span> <span class="nav-text">KMP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashMap内部结构，调用put方法时如何实现"><span class="nav-number">4.</span> <span class="nav-text">HashMap内部结构，调用put方法时如何实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashSet是如何保证元素不重复的"><span class="nav-number">5.</span> <span class="nav-text">HashSet是如何保证元素不重复的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL中插入一千万条数据如何是实现"><span class="nav-number">6.</span> <span class="nav-text">MySQL中插入一千万条数据如何是实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#String，StringBuffer，StringBuilder"><span class="nav-number">7.</span> <span class="nav-text">String，StringBuffer，StringBuilder</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组-Array-和列表-ArrayList-的区别？什么时候应该使用Array而不是ArrayList？"><span class="nav-number">8.</span> <span class="nav-text">数组(Array)和列表(ArrayList)的区别？什么时候应该使用Array而不是ArrayList？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hashCode与equals"><span class="nav-number">9.</span> <span class="nav-text">hashCode与equals</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#迭代器"><span class="nav-number">10.</span> <span class="nav-text">迭代器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashMap-HashTable-ConcurrentHashMap"><span class="nav-number">11.</span> <span class="nav-text">HashMap, HashTable, ConcurrentHashMap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程池"><span class="nav-number">12.</span> <span class="nav-text">线程池</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JVM"><span class="nav-number">13.</span> <span class="nav-text">JVM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GC"><span class="nav-number">14.</span> <span class="nav-text">GC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NIO，AIO，多路复用"><span class="nav-number">15.</span> <span class="nav-text">NIO，AIO，多路复用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三次握手，四次挥手"><span class="nav-number">16.</span> <span class="nav-text">三次握手，四次挥手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#死锁与解锁"><span class="nav-number">17.</span> <span class="nav-text">死锁与解锁</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#正则表达式"><span class="nav-number">1.</span> <span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串拼接性能-amp-StringBuffer与StringBuilder"><span class="nav-number">2.</span> <span class="nav-text">字符串拼接性能 &amp; StringBuffer与StringBuilder</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串拼接性能"><span class="nav-number">2.1.</span> <span class="nav-text">字符串拼接性能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#StringBuffer与StringBuilder"><span class="nav-number">2.2.</span> <span class="nav-text">StringBuffer与StringBuilder</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#KMP"><span class="nav-number">3.</span> <span class="nav-text">KMP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashMap内部结构，调用put方法时如何实现"><span class="nav-number">4.</span> <span class="nav-text">HashMap内部结构，调用put方法时如何实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashSet是如何保证元素不重复的"><span class="nav-number">5.</span> <span class="nav-text">HashSet是如何保证元素不重复的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL中插入一千万条数据如何是实现"><span class="nav-number">6.</span> <span class="nav-text">MySQL中插入一千万条数据如何是实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#String，StringBuffer，StringBuilder"><span class="nav-number">7.</span> <span class="nav-text">String，StringBuffer，StringBuilder</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组-Array-和列表-ArrayList-的区别？什么时候应该使用Array而不是ArrayList？"><span class="nav-number">8.</span> <span class="nav-text">数组(Array)和列表(ArrayList)的区别？什么时候应该使用Array而不是ArrayList？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hashCode与equals"><span class="nav-number">9.</span> <span class="nav-text">hashCode与equals</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#迭代器"><span class="nav-number">10.</span> <span class="nav-text">迭代器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashMap-HashTable-ConcurrentHashMap"><span class="nav-number">11.</span> <span class="nav-text">HashMap, HashTable, ConcurrentHashMap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程池"><span class="nav-number">12.</span> <span class="nav-text">线程池</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JVM"><span class="nav-number">13.</span> <span class="nav-text">JVM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GC"><span class="nav-number">14.</span> <span class="nav-text">GC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NIO，AIO，多路复用"><span class="nav-number">15.</span> <span class="nav-text">NIO，AIO，多路复用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三次握手，四次挥手"><span class="nav-number">16.</span> <span class="nav-text">三次握手，四次挥手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#死锁与解锁"><span class="nav-number">17.</span> <span class="nav-text">死锁与解锁</span></a></li></ol></div>
             
 
           </div>
@@ -794,7 +835,7 @@
       <i class="fa fa-area-chart"> 本站字数合计:</i>
     </span>
     
-    <span title="站点总字数">29k</span>
+    <span title="站点总字数">31k</span>
   
 
   
